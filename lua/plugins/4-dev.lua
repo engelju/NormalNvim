@@ -318,9 +318,11 @@ return {
     cmd = { "Neural" },
     config = function()
       require("neural").setup {
+        selected = 'chatgpt',
         source = {
-          openai = {
+          chatgpt = {
             api_key = vim.env.OPENAI_API_KEY,
+            model = "gpt-4-turbo",
           },
         },
         ui = {
