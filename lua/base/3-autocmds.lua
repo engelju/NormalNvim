@@ -282,3 +282,14 @@ end, { desc = "Write all changed buffers" })
 cmd("CloseNotifications", function()
   require("notify").dismiss({ pending = true, silent = true })
 end, { desc = "Dismiss all notifications" })
+
+-- Automatically enter zen mode when in markdown files
+autocmd({ "FileType" }, {
+  desc = "Automatically enter zen mode in Markdown files",
+  -- pattern = "markdown",
+  pattern = { "markdown" },
+  callback = function()
+    vim.cmd("ZenMode")
+  end,
+})
+
