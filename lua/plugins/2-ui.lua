@@ -412,30 +412,30 @@ return {
           lib.component.fill({ hl = { bg = "tabline_bg" } }),
           lib.component.tabline_tabpages(),
         },
-        winbar = { -- UI breadcrumbs bar
-          init = function(self) self.bufnr = vim.api.nvim_get_current_buf() end,
-          fallthrough = false,
-          -- Winbar for terminal, neotree, and aerial.
-          {
-            condition = function() return not lib.condition.is_active() end,
-            {
-              lib.component.neotree(),
-              lib.component.compiler_play(),
-              lib.component.fill(),
-              lib.component.compiler_redo(),
-              lib.component.aerial(),
-            },
-          },
-          -- Regular winbar
-          {
-            lib.component.neotree(),
-            lib.component.compiler_play(),
-            lib.component.compiler_redo(),
-            lib.component.fill(),
-            lib.component.breadcrumbs(),
-            lib.component.aerial(),
-          },
-        },
+        -- winbar = { -- UI breadcrumbs bar
+          -- init = function(self) self.bufnr = vim.api.nvim_get_current_buf() end,
+          -- fallthrough = false,
+          -- -- Winbar for terminal, neotree, and aerial.
+          -- {
+          --   condition = function() return not lib.condition.is_active() end,
+          --   {
+          --     lib.component.neotree(),
+          --     lib.component.compiler_play(),
+          --     lib.component.fill(),
+          --     lib.component.compiler_redo(),
+          --     lib.component.aerial(),
+          --   },
+          -- },
+          -- -- Regular winbar
+          -- {
+          --   lib.component.neotree(),
+          --   lib.component.compiler_play(),
+          --   lib.component.compiler_redo(),
+          --   lib.component.fill(),
+          --   lib.component.breadcrumbs(),
+          --   lib.component.aerial(),
+          -- },
+        -- },
         statuscolumn = { -- UI left column
           init = function(self) self.bufnr = vim.api.nvim_get_current_buf() end,
           -- lib.component.foldcolumn(),
